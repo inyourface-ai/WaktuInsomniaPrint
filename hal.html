@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Waktu Insomnia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background: #0f172a; color: #e2e8f0; }
+    a { text-decoration: none; }
+
+    /* Header */
+    .header { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; background: #1e293b; box-shadow: 0 2px 8px rgba(0,0,0,0.6); position: sticky; top:0; z-index:1000; }
+    .logo { font-weight: 700; font-size: 20px; color: #fff; }
+    .btn-primary { background: linear-gradient(135deg, #6366f1, #3b82f6); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600; transition: 0.3s; }
+    .btn-primary:hover { background: linear-gradient(135deg, #818cf8, #60a5fa); }
+
+    /* Hero */
+    .hero { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 80px 10%; background: linear-gradient(160deg, #1e293b, #0f172a); }
+    .hero-text { max-width: 500px; }
+    .hero-text h1 { font-size: 42px; font-weight: 700; margin-bottom: 20px; color: #f9fafb; }
+    .hero-text p { font-size: 18px; margin-bottom: 30px; color: #cbd5e1; }
+    .hero-img img { width: 280px; filter: drop-shadow(0 0 15px rgba(99,102,241,0.8)); }
+
+    /* Features */
+    .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; padding: 60px 10%; background: #0f172a; }
+    .card { background: #1e293b; padding: 30px; border-radius: 12px; text-align: center; width: 250px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); transition: transform 0.2s, box-shadow 0.2s; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 6px 16px rgba(99,102,241,0.4); }
+    .icon { font-size: 40px; margin-bottom: 15px; color: #60a5fa; text-shadow: 0 0 8px rgba(96,165,250,0.7); }
+
+    /* Form */
+    .form-section { max-width: 600px; margin: 50px auto; background: #1e293b; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
+    .form-section h2 { text-align: center; margin-bottom: 20px; color: #f1f5f9; }
+    .order-form { display: flex; flex-direction: column; gap: 15px; }
+    .order-form input, .order-form select, .order-form textarea { padding: 12px; border: 1px solid #334155; border-radius: 8px; font-size: 14px; background: #0f172a; color: #f9fafb; }
+    .order-form input:focus, .order-form select:focus, .order-form textarea:focus { border-color: #6366f1; outline: none; box-shadow: 0 0 6px rgba(99,102,241,0.6); }
+    .order-form textarea { resize: vertical; }
+    .order-form button { cursor: pointer; }
+
+    /* Footer */
+    .footer { text-align: center; padding: 20px; background: #1e293b; font-size: 14px; margin-top: 50px; color: #94a3b8; }
+    .footer a { color: #60a5fa; margin: 0 5px; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">🌙 Waktu Insomnia</div>
+    <a href="#form" class="btn-primary">Pesan Sekarang</a>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Butuh Print/Fotocopy Malam Hari?</h1>
+      <p>Kami siap membantu print dokumen kapan saja, bahkan larut malam.</p>
+      <a href="#form" class="btn-primary">Pesan Print Sekarang</a>
+    </div>
+    <div class="hero-img">
+      <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png" alt="Printer Malam">
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="card">
+      <div class="icon">⏰</div>
+      <h3>24 Jam</h3>
+      <p>Layanan siap melayani kapan saja, bahkan tengah malam.</p>
+    </div>
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h3>Cepat & Praktis</h3>
+      <p>Proses cepat, tinggal kirim file & langsung diproses.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🚚</div>
+      <h3>Antar sampai rumah</h3>
+      <p>diantar sampai rumah untuk kenyamanan lebih.</p>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="form-section" id="form">
+    <h2>FORM PESAN PRINT/FOTOCOPY</h2>
+    <form method="POST" action="proses.php" enctype="multipart/form-data" class="order-form">
+      <input type="text" name="name" placeholder="Nama Lengkap" required>
+      <input type="text" name="phone" placeholder="Nomor HP / WhatsApp" required>
+      <select name="service">
+        <option>Print Hitam Putih</option>
+        <option>Print Warna</option>
+        <option>Fotocopy</option>
+      </select>
+      <input type="number" name="pages" placeholder="Jumlah Halaman" min="1" required>
+      <input type="file" name="file">
+      <textarea name="note" placeholder="Catatan Tambahan (jilid, A4/F4, dsb.)"></textarea>
+      <input type="text" name="address" placeholder="Alamat (isi sedetail mungkin)">
+<label for="delivery-time">Waktu Pengantaran</label>
+<input type="text" name="delivery_time" id="delivery-time" 
+       placeholder="Contoh: 2025-09-30 | 13:00 - 15:00" required>
+
+      <button type="submit" class="btn-primary">KIRIM PESANAN</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Kontak: 
+      <a href="#">WA</a> | 
+      <a href="#">Telegram</a> | 
+      <a href="#">Instagram</a>
+    </p>
+    <p>© 2025 Waktu Insomnia</p>
+  </footer>
+</body>
+</html>
